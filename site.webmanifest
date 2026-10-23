@@ -1,0 +1,8 @@
+{
+  "name": "Fam's Automotive Inc.",
+  "short_name": "Fam's Auto",
+  "icons": [{ "src": "/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }],
+  "theme_color": "#0d1c17",
+  "background_color": "#0d1c17",
+  "display": "browser"
+}
