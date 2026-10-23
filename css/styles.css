@@ -410,8 +410,14 @@ p { text-wrap: pretty; }
 @media (hover: hover) and (pointer: fine) { .foot a:hover { opacity: 1; } }
 @media (min-width: 48rem) { .foot { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 60rem) { .foot { grid-template-columns: 3fr 3fr 3fr 3fr; column-gap: 2rem; } }
-.wordmark { display: block; width: 100%; height: auto; margin-top: clamp(1.5rem, 4vw, 3rem); fill: var(--bone); }
-.wordmark text { font-family: var(--sans); font-stretch: 125%; font-weight: 700; text-transform: uppercase; }
+/* Full-width wordmark: real type, sized to the column, letters justified to both edges */
+.wordmark {
+  display: flex; justify-content: space-between; overflow: hidden;
+  margin-top: clamp(1.5rem, 4vw, 3rem); padding-top: 0.06em;
+  font-stretch: 125%; font-weight: 700; line-height: 0.84; white-space: nowrap; color: var(--bone);
+  font-size: calc(min(100vw - 2 * var(--gutter), var(--max)) / 13.4);
+}
+.wordmark span { display: block; }
 .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; padding: 1.5rem 0 calc(1.75rem + env(safe-area-inset-bottom)); color: var(--stone-dark); }
 
 /* ---------- Services page ---------- */
@@ -515,10 +521,82 @@ p { text-wrap: pretty; }
 .mbar svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.6; }
 @media (min-width: 60rem) { .mbar { display: none; } }
 
-/* ---------- Scroll reveal ---------- */
+/* ---------- Motion ----------
+   One curve, three moves: hairlines draw, type rises from behind an edge, content settles in after the line.
+   Scroll-triggered hidden states only apply under .motion, which main.js sets, so nothing stays hidden if JS fails.
+   Above-the-fold pieces use .js + CSS keyframes instead, so they never flash. */
+:root { --t: 1; }
+@media (max-width: 60rem) { :root { --t: 0.8; } }
+
+/* Light across the hero follows the scroll as well as the clock */
+.hero__sheen { translate: calc(var(--sp, 0) * 28%) 0; }
+
 @media (prefers-reduced-motion: no-preference) {
-  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
-  .js .reveal.is-in { opacity: 1; transform: none; }
-  .js .rule { transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease); }
-  .js .rule.is-in { transform: none; }
+  /* Content settles */
+  .motion .reveal { opacity: 0; transform: translateY(10px); transition: opacity calc(0.9s * var(--t)) var(--ease), transform calc(0.9s * var(--t)) var(--ease); transition-delay: calc(var(--i, 0) * 70ms); }
+  .motion .reveal.is-in { opacity: 1; transform: none; }
+
+  /* Hairlines draw left to right, then their content follows */
+  .motion :is(.principles li, .steps li, .contact__block, .svc__quote) { --rc: var(--line-strong); }
+  .motion .svc__quote { --rc: var(--line); }
+  .motion :is(.quotes, .foot) { --rc: rgba(236, 235, 229, 0.22); }
+  .motion :is(.svc-list, .faq) { --rc: var(--line-strong); }
+  .motion :is(.principles li, .steps li, .contact__block, .svc__quote, .svc-list, .faq, .quotes, .foot) { position: relative; border-top-color: transparent; }
+  .motion :is(.principles li, .steps li, .contact__block, .svc__quote, .svc-list, .faq, .quotes, .foot)::after {
+    content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--rc);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform calc(1.3s * var(--t)) var(--ease); transition-delay: calc(var(--i, 0) * 110ms);
+  }
+  .motion .is-in:is(.principles li, .steps li, .contact__block, .svc__quote, .svc-list, .faq, .quotes, .foot)::after { transform: none; }
+  .motion :is(.principles li, .steps li, .contact__block, .svc__quote) > *,
+  .motion .steps li::before,
+  .motion :is(.svc-list, .faq, .quotes, .foot) > * {
+    opacity: 0; transform: translateY(10px);
+    transition: opacity calc(0.9s * var(--t)) var(--ease), transform calc(0.9s * var(--t)) var(--ease);
+    transition-delay: calc(var(--i, 0) * 110ms + var(--c, 0) * 70ms + 280ms);
+  }
+  .motion .is-in:is(.principles li, .steps li, .contact__block, .svc__quote) > *,
+  .motion .steps li.is-in::before,
+  .motion .is-in:is(.svc-list, .faq, .quotes, .foot) > * { opacity: 1; transform: none; }
+
+  /* Above the fold on load: the hero spec row and inner-page intro rule */
+  .js :is(.specs, .page-hero__aside) { position: relative; border-top-color: transparent; }
+  .js :is(.specs, .page-hero__aside)::after {
+    content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--line-dark);
+    transform: scaleX(0); transform-origin: left; animation: draw calc(1.4s * var(--t)) var(--ease) forwards;
+    animation-delay: calc(var(--d, 0) * 1ms);
+  }
+  @keyframes draw { to { transform: none; } }
+
+  /* Section headings: hidden until main.js splits them into lines and lets each rise */
+  .motion :is(.sec-head h2, .svc__side h2, .form h2):not(.split) { visibility: hidden; }
+
+  /* Closing headline opens from narrow to full width as it scrolls in (width set by main.js) */
+  .motion .closing__grid h2 { font-stretch: var(--w, 125%); }
+
+  /* Footer wordmark: letters set one by one from below the baseline */
+  .motion .wordmark span { transform: translateY(105%); transition: transform calc(1.1s * var(--t)) var(--ease); transition-delay: calc(var(--c) * 38ms); }
+  .motion .wordmark.is-in span { transform: none; }
+
+  /* Small details */
+  .status[data-open="true"]::before { animation: ping 1.8s var(--ease) 0.5s 1; }
+  @keyframes ping { from { box-shadow: 0 0 0 0 rgba(46, 154, 94, 0.5); } to { box-shadow: 0 0 0 12px rgba(46, 154, 94, 0); } }
+  .hours .is-today th::after { display: inline-block; animation: today 0.9s var(--ease) 0.4s both; }
+  @keyframes today { from { opacity: 0; transform: translateX(-6px); } }
+}
+
+/* Services page: one underline that slides between jump links */
+.jump__in { position: relative; }
+.jump__bar { position: absolute; left: 0; bottom: 0; width: 100px; height: 1px; background: var(--ink); transform-origin: left; transform: scaleX(0); transition: transform 0.6s var(--ease); pointer-events: none; }
+.jump a.is-active { color: var(--ink); }
+
+/* Page to page: the header holds still while the page underneath cross-fades */
+@view-transition { navigation: auto; }
+.site-header { view-transition-name: site-header; }
+::view-transition-old(root) { animation: vt-out 0.28s var(--ease) both; }
+::view-transition-new(root) { animation: vt-in 0.6s var(--ease) both; }
+@keyframes vt-out { to { opacity: 0; } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(10px); } }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }

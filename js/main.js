@@ -2,14 +2,14 @@
 (function () {
   'use strict';
   var root = document.documentElement;
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+  var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
+  // Scroll-triggered hidden states in the CSS only apply once this class is on
+  root.classList.add('motion');
 
   // Footer year
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
-
-  // Header: solid once the page moves
-  var header = document.querySelector('.site-header');
-  var onScroll = function () { header.classList.toggle('is-scrolled', scrollY > 24); };
-  if (header) { onScroll(); addEventListener('scroll', onScroll, { passive: true }); }
 
   // Mobile menu
   var menuBtn = document.querySelector('.menu-btn');
@@ -26,22 +26,75 @@
     addEventListener('keydown', function (e) { if (e.key === 'Escape' && root.classList.contains('nav-open')) { setMenu(false); menuBtn.focus(); } });
   }
 
-  // Reveal on scroll
-  var reveals = document.querySelectorAll('.reveal, .rule');
+  // Headings: split into the lines the browser actually set, let each rise from behind its edge,
+  // then put the plain text back so the heading reflows normally on resize.
+  var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+  var splitRise = function (el) {
+    if (calm) { el.classList.add('split'); return; }
+    var original = el.innerHTML;
+    var words = el.textContent.trim().split(/\s+/);
+    el.innerHTML = words.map(function (w) { return '<span class="w">' + esc(w) + '</span>'; }).join(' ');
+    var lines = [], top = null;
+    el.querySelectorAll('.w').forEach(function (w) {
+      if (w.offsetTop !== top) { lines.push([]); top = w.offsetTop; }
+      lines[lines.length - 1].push(w.textContent);
+    });
+    el.innerHTML = lines.map(function (l, i) {
+      return '<span class="line"><span style="--d:' + (i * 90 - 150) + '">' + esc(l.join(' ')) + '</span></span>';
+    }).join(' ');
+    el.classList.add('split');
+    setTimeout(function () { el.innerHTML = original; }, 1300 + lines.length * 90);
+  };
+
+  // Scroll-triggered motion
+  var ruled = '.principles li, .steps li, .contact__block, .svc__quote, .svc-list, .faq, .quotes, .foot';
+  document.querySelectorAll('.svc-list, .faq, .quotes, .foot').forEach(function (list) {
+    Array.prototype.forEach.call(list.children, function (child, i) { child.style.setProperty('--c', i); });
+  });
+  var headings = document.querySelectorAll('.sec-head h2, .svc__side h2, .form h2');
+  var watched = document.querySelectorAll('.reveal, .wordmark, ' + ruled);
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        if (e.target.matches('h2')) splitRise(e.target);
+        else e.target.classList.add('is-in');
       });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
-    reveals.forEach(function (el) { io.observe(el); });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
+    watched.forEach(function (el) { io.observe(el); });
+    headings.forEach(function (el) { io.observe(el); });
   } else {
-    reveals.forEach(function (el) { el.classList.add('is-in'); });
+    watched.forEach(function (el) { el.classList.add('is-in'); });
+    headings.forEach(function (el) { el.classList.add('split'); });
   }
+
+  // One scroll loop: solid header, light across the hero, the closing headline opening up
+  var header = document.querySelector('.site-header');
+  var hero = document.querySelector('.hero, .page-hero');
+  var closingTitle = document.querySelector('.closing__grid h2');
+  var ticking = false;
+  var frame = function () {
+    ticking = false;
+    var y = scrollY, vh = innerHeight;
+    if (header) header.classList.toggle('is-scrolled', y > 24);
+    if (calm) return;
+    if (hero && y < hero.offsetHeight) hero.style.setProperty('--sp', (y / hero.offsetHeight).toFixed(4));
+    if (closingTitle) {
+      var top = closingTitle.getBoundingClientRect().top;
+      if (top < vh * 1.1 && top > -vh) {
+        var p = easeOut(clamp((vh - top) / (vh * 0.65)));
+        closingTitle.style.setProperty('--w', (72 + 53 * p).toFixed(1) + '%');
+      }
+    }
+  };
+  var onScroll = function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  frame();
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
 
   // Mobile call bar: hidden over the hero (which has its own buttons), shown after it
   var mbar = document.querySelector('.mbar');
-  var hero = document.querySelector('.hero, .page-hero');
   if (mbar) {
     var setBar = function (on) {
       mbar.classList.toggle('is-on', on);
@@ -54,19 +107,37 @@
     }
   }
 
-  // Services page: highlight the jump link for the section in view
+  // Services page: one underline that slides to the jump link for the section in view
+  var jumpWrap = document.querySelector('.jump__in');
   var jump = document.querySelectorAll('.jump a[href^="#"]');
-  if (jump.length && 'IntersectionObserver' in window) {
+  if (jumpWrap && jump.length && 'IntersectionObserver' in window) {
+    var bar = document.createElement('span');
+    bar.className = 'jump__bar';
+    bar.setAttribute('aria-hidden', 'true');
+    jumpWrap.appendChild(bar);
+    var current = null;
+    var moveBar = function (a) {
+      if (!a) { bar.style.transform = 'translateX(0) scaleX(0)'; return; }
+      bar.style.transform = 'translateX(' + a.offsetLeft + 'px) scaleX(' + (a.offsetWidth / 100) + ')';
+      var target = a.offsetLeft - (jumpWrap.clientWidth - a.offsetWidth) / 2;
+      jumpWrap.scrollTo({ left: target, behavior: calm ? 'auto' : 'smooth' });
+    };
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
-        jump.forEach(function (a) { a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id); });
+        jump.forEach(function (a) {
+          var on = a.getAttribute('href') === '#' + e.target.id;
+          a.classList.toggle('is-active', on);
+          if (on) current = a;
+        });
+        moveBar(current);
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     jump.forEach(function (a) {
       var el = document.getElementById(a.getAttribute('href').slice(1));
       if (el) spy.observe(el);
     });
+    addEventListener('resize', function () { moveBar(current); });
   }
 
   // Hours: highlight today and say whether the shop is open (shop time, America/Toronto)
