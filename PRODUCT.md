@@ -15,7 +15,10 @@ Mississauga drivers who have been burned or upsold before and want a mechanic th
 Fear (getting taken for a ride) -> promise (price before the wrench, only what it needs, family-run) -> proof (reviews, in customers' own words) -> risk reversal (nothing starts until you approve) -> call.
 
 ## Design world
-Pine green + cream paper + tomato signal. Familjen Grotesk (display and body) with Instrument Serif italic for the one emotional word per headline. Hero: centred copy over a near-invisible drafting sheet: lamp glow, faint grid, a cross-drilled brake rotor in hairlines turning very slowly.
+Editorial / spec-sheet. Graphite ink, bone paper, one signal red used only as a mark (logo square, quote rule, today in hours).
+Archivo at 125% width, uppercase, for display; Archivo normal width for body; IBM Plex Mono for small labels and section indexes ((01) The shop ...).
+Hairline rules, asymmetric 3/9 grid, square-cornered buttons, no icons, no cards, no avatars.
+Hero: centred headline over near-black with a slow light sheen moving across it like light on paint. Felt, not noticed.
 Deliberately unlike Fast Auto Centre (near-black + amber, condensed stencil type, roll-up door, video), which is close by.
 
 ## Never
