@@ -47,18 +47,18 @@
   };
 
   // Scroll-triggered motion
-  var ruled = '.principles li, .steps li, .contact__block, .svc__quote, .svc-list, .faq, .quotes, .foot';
-  document.querySelectorAll('.svc-list, .faq, .quotes, .foot').forEach(function (list) {
+  var ruled = '.process__steps li, .contact__block, .svc__quote, .svc-list, .faq, .quotes, .foot, .promises';
+  document.querySelectorAll('.svc-list, .faq, .quotes, .foot, .promises').forEach(function (list) {
     Array.prototype.forEach.call(list.children, function (child, i) { child.style.setProperty('--c', i); });
   });
-  var headings = document.querySelectorAll('.sec-head h2, .svc__side h2, .form h2');
+  var headings = document.querySelectorAll('[data-rise]');
   var watched = document.querySelectorAll('.reveal, .wordmark, ' + ruled);
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         io.unobserve(e.target);
-        if (e.target.matches('h2')) splitRise(e.target);
+        if (e.target.hasAttribute('data-rise')) splitRise(e.target);
         else e.target.classList.add('is-in');
       });
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });

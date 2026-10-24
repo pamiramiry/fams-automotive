@@ -18,6 +18,8 @@ Fear (getting taken for a ride) -> promise (price before the wrench, only what i
 Editorial / spec-sheet. Graphite ink, bone paper, one signal red used only as a mark (logo square, quote rule, today in hours).
 Archivo at 125% width, uppercase, for display; Archivo normal width for body; IBM Plex Mono for small labels and section indexes ((01) The shop ...).
 Hairline rules, asymmetric 3/9 grid, square-cornered buttons, no icons, no cards, no avatars.
+Warmth counterweight (so it doesn't read as expensive): wide caps only for page titles, the closing line and the wordmark; section headings in sentence case; cream family section with an owner's note; visible "From $" prices.
+Each home section has its own shape: centred hero, photo + note split, price list, quote-led reviews, sticky-heading process.
 Hero: centred headline over near-black with a slow light sheen moving across it like light on paint. Felt, not noticed.
 Deliberately unlike Fast Auto Centre (near-black + amber, condensed stencil type, roll-up door, video), which is close by.
 

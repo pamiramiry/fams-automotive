@@ -12,6 +12,13 @@ Find/replace across index.html, services.html, contact.html:
 - Areas served: Mississauga, Brampton, Etobicoke, Oakville (schema + footer)
 - Real photos (shop front, bays, team). The hero works without any, but the services page and a "meet the family" block would benefit.
 
+## Prices (site shows "From $XX")
+Home page service list and services page: oil change, brakes (per axle), transmission/DSG, diagnostics, tune-up. Exhaust and suspension say "Quote on inspection". Also confirm the note "Prices include labour. Parts vary by vehicle. HST extra."
+
+## Owner's note and photo
+- The "A family shop that fixes your car like it's ours" note on the home page is a draft in the family's voice. Have them read it, change any words, and decide how to sign it (currently "The Fam's Automotive family"; could be a name).
+- Photo slot next to it: the family / team in the shop, portrait (4:5).
+
 ## Claims in the copy (from reviews or written as promises; confirm each)
 1. Nothing starts until the customer approves the quote.
 2. No upselling; they'll say when something can wait.
