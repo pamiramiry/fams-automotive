@@ -11,7 +11,7 @@
 - Quote form: preview only, no form service. Submitting shows a message asking people to call.
 - Google profile link: https://share.google/P5KAsRLT8g4FF58c0 (reviews links and schema hasMap).
 - Hero video: images/hero-mobile.webm / .mp4 (720x1280, 13.6s, supplied by the user). Phones only. Confirm the clip's licence before launch.
-- Desktop hero video: Pexels 4488717 garage clip (not Fam's shop), blurred so it reads as mood, not as their premises. Swap for real shop footage later if they have it.
+- Desktop hero video: Pexels 4488717 garage clip, DEMO ONLY (unblurred, shows Plymouth / AIMOL logos, not Fam's shop). The user will replace it before launch: overwrite images/hero-desktop-1080.webm, hero-desktop-1080.mp4, hero-desktop-720.mp4 and hero-desktop-still.jpg.
 
 ## New homepage sections (2026-10-26): confirm these claims
 - Comparison table "Fam's vs the dealership": every row, especially "Most makes, from daily drivers to an Audi R8", "Independent rates, quoted before we start", "factory-spec parts and fluids, itemized invoice". Dealer column is written as "often/typical" on purpose.
