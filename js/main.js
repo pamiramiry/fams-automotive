@@ -145,6 +145,32 @@
     }
   }
 
+  // Reviews on phones: counter, progress line and previous / next for the swipe row
+  var qList = document.getElementById('quotes');
+  var qNav = document.querySelector('.quotes-nav');
+  if (qList && qNav) {
+    qNav.hidden = false;
+    var qItems = qList.children, qCur = qNav.querySelector('[data-q-cur]');
+    var qPrev = qNav.querySelector('[data-q-prev]'), qNext = qNav.querySelector('[data-q-next]');
+    var qStep = function () { return qItems.length > 1 ? qItems[1].offsetLeft - qItems[0].offsetLeft : qList.clientWidth; };
+    var qIndex = function () { return Math.max(0, Math.min(qItems.length - 1, Math.round(qList.scrollLeft / qStep()))); };
+    var qPaint = function () {
+      var atEnd = qList.scrollLeft + qList.clientWidth >= qList.scrollWidth - 4;
+      var i = atEnd ? qItems.length - 1 : qIndex();
+      qCur.textContent = (i < 9 ? '0' : '') + (i + 1);
+      qNav.style.setProperty('--q', ((i + 1) / qItems.length).toFixed(4));
+      qPrev.disabled = qList.scrollLeft <= 4;
+      qNext.disabled = atEnd;
+    };
+    var qGo = function (d) { qList.scrollTo({ left: (qIndex() + d) * qStep(), behavior: calm ? 'auto' : 'smooth' }); };
+    qPrev.addEventListener('click', function () { qGo(-1); });
+    qNext.addEventListener('click', function () { qGo(1); });
+    var qTick = false;
+    qList.addEventListener('scroll', function () { if (!qTick) { qTick = true; requestAnimationFrame(function () { qTick = false; qPaint(); }); } }, { passive: true });
+    addEventListener('resize', qPaint);
+    qPaint();
+  }
+
   // Services page: one underline that slides to the jump link for the section in view
   var jumpWrap = document.querySelector('.jump__in');
   var jump = document.querySelectorAll('.jump a[href^="#"]');

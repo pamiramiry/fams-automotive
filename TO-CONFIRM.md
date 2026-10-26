@@ -7,7 +7,7 @@
 - Map links use a Google Maps search for the address. Swap in the exact profile and review links (share link from the profile) when available.
 
 ## Preview setup (decided 2026-10-26)
-- Hosted on Vercel, no domain for now. Site URL set to https://fams-automotive-mississauga.vercel.app (canonical, Open Graph, schema, robots.txt, sitemap.xml). `fams-automotive.vercel.app` was already taken by another deploy. If the Vercel project gets a different name, find/replace that URL. When a real domain is bought, swap it in the same way.
+- Hosted on Vercel, no domain for now. Site URL set to https://fams-automotive-teal.vercel.app (canonical, Open Graph, schema, robots.txt, sitemap.xml). When a real domain is bought, swap it in the same way.
 - Quote form: preview only, no form service. Submitting shows a message asking people to call.
 - Google profile link: https://share.google/P5KAsRLT8g4FF58c0 (reviews links and schema hasMap).
 - Hero video: images/hero-mobile.webm / .mp4 (720x1280, 13.6s, supplied by the user). Phones only; desktop keeps the light band. Confirm the clip's licence before launch.

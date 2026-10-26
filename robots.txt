@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fams-automotive-mississauga.vercel.app/sitemap.xml
+Sitemap: https://fams-automotive-teal.vercel.app/sitemap.xml
