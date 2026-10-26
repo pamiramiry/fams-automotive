@@ -6,11 +6,15 @@
 - Rating shown as text: 4.8 from 85 Google reviews (hero spec row, reviews label). Update the number now and then. Still no aggregateRating schema on purpose.
 - Map links use a Google Maps search for the address. Swap in the exact profile and review links (share link from the profile) when available.
 
-## Still missing
-- `[FORM ENDPOINT]` on contact.html (e.g. Formspree). Until set, the form asks people to call.
-- Domain: assumed `famsautomotive.ca` (canonical, OG, schema, robots.txt, sitemap.xml)
-- Areas served: Mississauga, Brampton, Etobicoke, Oakville (schema + footer)
-- Real photos (shop front, bays, team, the 7 services)
+## Preview setup (decided 2026-10-26)
+- Hosted on Vercel, no domain for now. Site URL set to https://fams-automotive-mississauga.vercel.app (canonical, Open Graph, schema, robots.txt, sitemap.xml). `fams-automotive.vercel.app` was already taken by another deploy. If the Vercel project gets a different name, find/replace that URL. When a real domain is bought, swap it in the same way.
+- Quote form: preview only, no form service. Submitting shows a message asking people to call.
+- Google profile link: https://share.google/P5KAsRLT8g4FF58c0 (reviews links and schema hasMap).
+- Hero video: images/hero-mobile.webm / .mp4 (720x1280, 13.6s, supplied by the user). Phones only; desktop keeps the light band. Confirm the clip's licence before launch.
+
+## Later
+- Real photos (shop front, bays, team, the 7 services). Same file names in images/.
+- Areas served: Mississauga, Brampton, Etobicoke, Oakville (schema + footer).
 
 ## Prices (site shows "From $XX")
 Home page service list and services page: oil change, brakes (per axle), transmission/DSG, diagnostics, tune-up. Exhaust and suspension say "Quote on inspection". Also confirm the note "Prices include labour. Parts vary by vehicle. HST extra."

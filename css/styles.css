@@ -215,6 +215,20 @@ p { text-wrap: pretty; }
   filter: blur(18px);
   transform: translateX(-18%);
 }
+/* Phone-only hero video (portrait clip). Desktop keeps the light band: the clip would have to be
+   blown up and cropped to a thin strip there. main.js only loads it on phones. */
+.hero__video, .hero__shade { display: none; }
+@media (max-width: 59.99rem) {
+  .hero__video { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s var(--ease); }
+  .hero__video.is-playing { opacity: 0.8; }
+  .hero__shade {
+    display: block; position: absolute; inset: 0;
+    background:
+      linear-gradient(to bottom, rgba(13, 14, 13, 0.75) 0%, rgba(13, 14, 13, 0) 22%),
+      linear-gradient(to top, rgba(13, 14, 13, 0.85) 0%, rgba(13, 14, 13, 0) 35%),
+      radial-gradient(90% 45% at 50% 46%, rgba(13, 14, 13, 0.62) 0%, rgba(13, 14, 13, 0.18) 100%);
+  }
+}
 .hero__sheen--warm {
   background: linear-gradient(104deg, transparent 44%, rgba(216, 64, 42, 0.05) 50%, transparent 56%);
   filter: blur(40px);
