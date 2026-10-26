@@ -118,28 +118,38 @@
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', onScroll);
 
-  // Hero video: phones only, after the page has loaded, never with reduced motion or Save-Data
+  // Hero video: portrait clip on phones, landscape clip on desktop. Loads after the page, never with
+  // reduced motion or Save-Data (desktop shows a still instead), and pauses while off screen.
   var vid = document.querySelector('.hero__video');
   var saveData = navigator.connection && navigator.connection.saveData;
-  if (vid && hero && !calm && !saveData && matchMedia('(max-width: 59.99rem)').matches) {
-    var startVid = function () {
-      [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(function (s) {
-        var src = document.createElement('source');
-        src.src = vid.getAttribute('data-' + s[0]); src.type = s[1];
-        vid.appendChild(src);
-      });
-      vid.load();
-      var p = vid.play(); if (p && p.catch) p.catch(function () {});
-      // Pause while the hero is off screen
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(function (entries) {
-          if (entries[0].isIntersecting) { var q = vid.play(); if (q && q.catch) q.catch(function () {}); } else vid.pause();
-        }).observe(hero);
-      }
-    };
-    vid.addEventListener('playing', function () { vid.classList.add('is-playing'); });
-    if (document.readyState === 'complete') setTimeout(startVid, 300);
-    else addEventListener('load', function () { setTimeout(startVid, 300); });
+  if (vid && hero) {
+    var phone = matchMedia('(max-width: 59.99rem)').matches;
+    if (calm || saveData) {
+      if (!phone) { vid.poster = vid.getAttribute('data-desk-still'); vid.classList.add('is-still'); }
+    } else {
+      var big = innerWidth * (devicePixelRatio || 1) >= 1800;
+      var files = phone
+        ? [[vid.getAttribute('data-webm'), 'video/webm'], [vid.getAttribute('data-mp4'), 'video/mp4']]
+        : [[vid.getAttribute('data-desk-webm'), 'video/webm'], [vid.getAttribute(big ? 'data-desk-mp4' : 'data-desk-mp4-sm'), 'video/mp4']];
+      var startVid = function () {
+        files.forEach(function (f) {
+          var src = document.createElement('source');
+          src.src = f[0]; src.type = f[1];
+          vid.appendChild(src);
+        });
+        vid.load();
+        var p = vid.play(); if (p && p.catch) p.catch(function () {});
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) { var q = vid.play(); if (q && q.catch) q.catch(function () {}); } else vid.pause();
+          }).observe(hero);
+        }
+      };
+      vid.addEventListener('playing', function () { vid.classList.add('is-playing'); });
+      var wait = phone ? 300 : 1000;
+      if (document.readyState === 'complete') setTimeout(startVid, wait);
+      else addEventListener('load', function () { setTimeout(startVid, wait); });
+    }
   }
 
   // Mobile call bar: hidden over the hero (which has its own buttons), shown after it

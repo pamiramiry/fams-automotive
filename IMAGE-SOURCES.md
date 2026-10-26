@@ -22,3 +22,9 @@ Originals kept in images/src/ (not deployed). Edits:
 | shop-amg-* | src/amg.webp | Plate already blacked out; blurred two background plates (blue VW, white SUV) |
 | shop-front.webp, shop-lounge.webp | src/Fams auto door.webp, src/waitingroom.webp | None (used small: originals are 224 and 141 px wide) |
 Unused for now (too small): src/unnamed (1).webp (Ferrari), src/bmw.webp, src/inside.webp.
+
+## Hero videos
+| File | Source | Licence | Edits |
+|---|---|---|---|
+| hero-desktop-1080.webm, hero-desktop-1080.mp4, hero-desktop-720.mp4, hero-desktop-still.jpg | Pexels video 4488717 (user supplied the 13s cut, originals in images/src/fams-hero-desktop*) | Pexels License (no attribution) | Whole frame blurred (gblur sigma 6) so the Plymouth sign and AIMOL / other stickers are unreadable; audio stripped; desktop only |
+| hero-mobile.webm, hero-mobile.mp4 | Supplied by the user | Unconfirmed | Phones only |
