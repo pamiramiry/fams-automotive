@@ -19,6 +19,9 @@ Home page service list and services page: oil change, brakes (per axle), transmi
 - The "A family shop that fixes your car like it's ours" note on the home page is a draft in the family's voice. Have them read it, change any words, and decide how to sign it (currently "The Fam's Automotive family"; could be a name).
 - Photo slot next to it: the family / team in the shop, portrait (4:5).
 
+## Service photos
+The 7 service photos (home page cards and services page) are free stand-ins, logged in IMAGE-SOURCES.md. Swap in real photos from the shop: same file names in images/, 4:3 landscape.
+
 ## Claims in the copy (from reviews or written as promises; confirm each)
 1. Nothing starts until the customer approves the quote.
 2. No upselling; they'll say when something can wait.

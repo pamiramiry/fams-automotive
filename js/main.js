@@ -47,12 +47,12 @@
   };
 
   // Scroll-triggered motion
-  var ruled = '.process__steps li, .contact__block, .svc__quote, .svc-list, .faq, .quotes, .foot, .promises';
-  document.querySelectorAll('.svc-list, .faq, .quotes, .foot, .promises').forEach(function (list) {
+  var ruled = '.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises';
+  document.querySelectorAll('.svc-grid, .faq, .quotes, .foot, .promises').forEach(function (list) {
     Array.prototype.forEach.call(list.children, function (child, i) { child.style.setProperty('--c', i); });
   });
   var headings = document.querySelectorAll('[data-rise]');
-  var watched = document.querySelectorAll('.reveal, .wordmark, ' + ruled);
+  var watched = document.querySelectorAll('.reveal, .wordmark, .photo-reveal, ' + ruled);
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -64,6 +64,20 @@
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
     watched.forEach(function (el) { io.observe(el); });
     headings.forEach(function (el) { io.observe(el); });
+    // Safety net: a fast fling can skip an element between frames, so once scrolling settles,
+    // reveal anything that is already above the bottom of the screen.
+    var settle;
+    addEventListener('scroll', function () {
+      clearTimeout(settle);
+      settle = setTimeout(function () {
+        watched.forEach(function (el) {
+          if (!el.classList.contains('is-in') && el.getBoundingClientRect().top < innerHeight) { io.unobserve(el); el.classList.add('is-in'); }
+        });
+        headings.forEach(function (el) {
+          if (!el.classList.contains('split') && el.getBoundingClientRect().top < innerHeight) { io.unobserve(el); splitRise(el); }
+        });
+      }, 180);
+    }, { passive: true });
   } else {
     watched.forEach(function (el) { el.classList.add('is-in'); });
     headings.forEach(function (el) { el.classList.add('split'); });
