@@ -15,3 +15,5 @@ Before launch: work through TO-CONFIRM.md.
 Cache: css/ and js/ are linked with ?v=YYYYMMDD. Bump that number in all three pages whenever styles.css or main.js changes, or returning visitors can get new HTML with an old stylesheet.
 
 Hero video: images/hero-mobile.webm/.mp4 play on phones only (main.js loads them after page load; skipped for reduced motion and Save-Data). Site URL: https://fams-automotive-teal.vercel.app
+
+Hero videos: images/hero-* are served with max-age=0 (vercel.json), so overwriting them shows up straight away. They also carry ?v= in index.html; bump it when replacing a clip to be safe.

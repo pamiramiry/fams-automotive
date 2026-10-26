@@ -790,3 +790,7 @@ p { text-wrap: pretty; }
     border-top: 1px solid var(--line-strong); font-weight: 600; font-size: 0.9375rem;
   }
 }
+
+/* Once a hero video plays, drop the light band and grain so the footage stays crisp */
+.hero__video.is-playing ~ .hero__sheen { opacity: 0; transition: opacity 0.8s var(--ease); }
+.hero__bg:has(.hero__video.is-playing)::after { opacity: 0; }
