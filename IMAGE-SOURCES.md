@@ -26,5 +26,5 @@ Unused for now (too small): src/unnamed (1).webp (Ferrari), src/bmw.webp, src/in
 ## Hero videos
 | File | Source | Licence | Edits |
 |---|---|---|---|
-| hero-desktop-1080.webm, hero-desktop-1080.mp4, hero-desktop-720.mp4, hero-desktop-still.jpg | Pexels video 4488717 (user supplied the 13s cut, originals in images/src/fams-hero-desktop*) | Pexels License (no attribution) | Whole frame blurred (gblur sigma 6) so the Plymouth sign and AIMOL / other stickers are unreadable; audio stripped; desktop only |
+| hero-desktop-1080.webm, hero-desktop-1080.mp4, hero-desktop-720.mp4, hero-desktop-still.jpg | Pexels video 4488717 (user supplied the 13s cut, originals in images/src/fams-hero-desktop*) | Pexels License (no attribution) | Blur only on a feathered mask over the top strip (round signs) and the right-hand sticker panel, so Plymouth / AIMOL / stickers are unreadable; rest of frame sharp; audio stripped; desktop only |
 | hero-mobile.webm, hero-mobile.mp4 | Supplied by the user | Unconfirmed | Phones only |
