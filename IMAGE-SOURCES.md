@@ -9,13 +9,14 @@ Stand-in service photos, all CC0 or Public Domain Mark (no attribution required)
 | svc-transmission-service-* | https://www.rawpixel.com/image/5907485/photo-image-public-domain-technology-person | CC0 | Cropped |
 | svc-check-engine-light-* | https://www.rawpixel.com/image/5927136/photo-image-lights-public-domain-interior | CC0 | Cropped |
 | svc-exhaust-repair-* | https://www.flickr.com/photos/95231808@N02/27281285729 | Public Domain Mark | Cropped off the uploader's watermark; blurred a wall banner and the brand name embossed on the muffler |
+| svc-ac-repair-* | https://www.flickr.com/photos/23408922@N07/20693834991 | Public Domain Mark | Cropped to 4:3 |
 | svc-tune-up-* | https://www.rawpixel.com/image/6073267/retired-sparking-plug | CC0 | Cropped |
 
 ## Shop photos (supplied by the client side, 2026-10-26)
 Originals kept in images/src/ (not deployed). Edits:
 | File | From | Edits |
 |---|---|---|
-| shop-audi-lift-* | src/audi.webp | Blurred the Ontario plate |
+| shop-audi-lift-*, svc-safety-certificate-* | src/audi.webp | Blurred the Ontario plate; safety card is a 4:3 crop |
 | shop-bmw-m8-* | src/bmw2.webp | Blurred a plate frame from another dealer ("Toronto Luxe Motors") |
 | shop-audi-r8-*, svc-brake-repair-* | src/r8.webp | Blurred the front plate; brake card is a crop of the wheel and caliper |
 | shop-amg-* | src/amg.webp | Plate already blacked out; blurred two background plates (blue VW, white SUV) |
