@@ -142,6 +142,9 @@ p { text-wrap: pretty; }
 .site-header.is-scrolled { background: rgba(13, 14, 13, 0.88); backdrop-filter: blur(14px) saturate(1.2); -webkit-backdrop-filter: blur(14px) saturate(1.2); border-bottom-color: var(--line-dark); }
 .site-header__in { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: var(--header-h); }
 .brand { display: inline-flex; align-items: center; gap: 0.7rem; }
+.brand__logo { display: block; height: 2.6rem; width: auto; }
+@media (min-width: 60rem) { .brand__logo { height: 3.2rem; } }
+.foot__logo { grid-column: 1 / -1; display: block; width: 9rem; height: auto; }
 .brand__mark { width: 0.6rem; height: 0.6rem; background: var(--signal); flex: none; }
 .brand__name { font-stretch: 125%; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1; white-space: nowrap; }
 .nav { display: none; }
