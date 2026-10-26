@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css?v=20261026d">
+  <link rel="stylesheet" href="css/styles.css?v=20261026e">
   <script>document.documentElement.classList.add('js')</script>
 
   <script type="application/ld+json">
@@ -56,7 +56,7 @@
           { "@type": "City", "name": "Mississauga" },
           { "@type": "City", "name": "Brampton" },
           { "@type": "City", "name": "Etobicoke" },
-          { "@type": "City", "name": "Oakville" }
+          { "@type": "City", "name": "Malton" }
         ],
         "openingHoursSpecification": [
           { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:00", "closes": "20:00" }
@@ -79,6 +79,17 @@
         "isPartOf": { "@id": "https://fams-automotive-teal.vercel.app/#website" },
         "about": { "@id": "https://fams-automotive-teal.vercel.app/#business" },
         "inLanguage": "en-CA"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fams-automotive-teal.vercel.app/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "How much will my repair cost?", "acceptedAnswer": { "@type": "Answer", "text": "Call with your car’s year, make and model. For common jobs like oil changes and brakes we can usually give you the price on the phone. For anything else we inspect first and give you a written quote before any work starts." } },
+          { "@type": "Question", "name": "Do you work on BMW, Audi and Mercedes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alongside everyday cars, our bays regularly see Audi, BMW and Mercedes-AMG models, including DSG gearbox services on Volkswagen and Audi." } },
+          { "@type": "Question", "name": "Are you open evenings and Saturdays?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We’re open Monday to Saturday, 9 am to 8 pm, so you can drop off before work or pick up after. Closed Sundays." } },
+          { "@type": "Question", "name": "Can I wait while you work on my car?", "acceptedAnswer": { "@type": "Answer", "text": "For quick jobs, yes. There’s a customer lounge, and many oil changes are done in under 30 minutes." } },
+          { "@type": "Question", "name": "Where are you?", "acceptedAnswer": { "@type": "Answer", "text": "1885 Sismet Rd, Unit 6N, Mississauga, ON L4W 1W8. We look after drivers from across Mississauga, Malton, Brampton and Etobicoke." } }
+        ]
       }
     ]
   }
@@ -121,7 +132,7 @@
         <ul class="specs in" style="--d:950">
           <li><span class="label">Quote</span><strong>Before any work starts</strong></li>
           <li><span class="label">Oil change</span><strong>Often under 30 min</strong></li>
-          <li><span class="label">Specialty</span><strong>VW &amp; Audi DSG service</strong></li>
+          <li><span class="label">Hours</span><strong>Mon to Sat, 9 am to 8 pm</strong></li>
           <li><span class="label">Google rating</span><strong>4.8 from 85 reviews</strong></li>
         </ul>
       </div>
@@ -130,8 +141,12 @@
     <section class="section section--cream family" aria-labelledby="family-title">
       <div class="wrap family__grid">
         <figure class="family__photo reveal">
-          <div class="photo-slot"><span class="label">Photo: the family in the shop</span></div>
-          <figcaption class="label label--muted">The Fam&rsquo;s Automotive family &middot; Mississauga</figcaption>
+          <img class="family__img" src="images/shop-audi-lift-sm.webp" srcset="images/shop-audi-lift-sm.webp 480w, images/shop-audi-lift-lg.webp 765w" sizes="(min-width: 60rem) 38vw, 92vw" width="765" height="1020" alt="An Audi up on a two-post lift with the hood open in the Fam&rsquo;s Automotive service bay" loading="lazy" decoding="async">
+          <figcaption class="label label--muted">In the bay at 1885 Sismet Rd, Mississauga</figcaption>
+          <div class="family__thumbs">
+            <figure><img src="images/shop-front.webp" width="224" height="298" alt="The Fam&rsquo;s Automotive sign above the open bay door" loading="lazy" decoding="async"><figcaption class="label label--muted">The shop</figcaption></figure>
+            <figure><img src="images/shop-lounge.webp" width="141" height="235" alt="Customer lounge with red sofas and a coffee table" loading="lazy" decoding="async"><figcaption class="label label--muted">The lounge</figcaption></figure>
+          </div>
         </figure>
         <div class="family__text">
           <p class="label idx reveal">(01) The shop</p>
@@ -163,7 +178,7 @@
         </div>
         <ul class="svc-grid">
           <li><a class="svc-card" href="services.html#oil-change"><span class="svc-card__media"><img src="images/svc-oil-change-sm.webp" srcset="images/svc-oil-change-sm.webp 640w, images/svc-oil-change-lg.webp 1024w" sizes="(min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Engine bay with the oil filler cap on a red valve cover, ready for an oil change" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">01</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">Oil change</span><span class="svc-card__desc">Right oil, new filter, a real look underneath. Often done in under 30 minutes.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
-          <li><a class="svc-card" href="services.html#brake-repair"><span class="svc-card__media"><img src="images/svc-brake-repair-sm.webp" srcset="images/svc-brake-repair-sm.webp 640w, images/svc-brake-repair-lg.webp 1024w" sizes="(min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Worn brake rotor and caliper on a car raised for brake repair" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">02</span><span class="svc-card__price">From $XX / axle</span></span><span class="svc-card__name">Brakes</span><span class="svc-card__desc">Pads, rotors, calipers and fluid. Measured first, so you only replace what’s worn.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
+          <li><a class="svc-card" href="services.html#brake-repair"><span class="svc-card__media"><img src="images/svc-brake-repair-sm.webp" srcset="images/svc-brake-repair-sm.webp 640w" sizes="(min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Audi R8 on a lift with the wheel off, showing the red brake caliper and rotor" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">02</span><span class="svc-card__price">From $XX / axle</span></span><span class="svc-card__name">Brakes</span><span class="svc-card__desc">Pads, rotors, calipers and fluid. Measured first, so you only replace what’s worn.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
           <li><a class="svc-card" href="services.html#transmission-service"><span class="svc-card__media"><img src="images/svc-transmission-service-sm.webp" srcset="images/svc-transmission-service-sm.webp 640w, images/svc-transmission-service-lg.webp 844w" sizes="(min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Close-up of transmission gears and housing during a gearbox service" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">03</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">Transmission &amp; DSG</span><span class="svc-card__desc">Automatic, CVT and VW / Audi DSG fluid services to factory spec.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
           <li><a class="svc-card" href="services.html#check-engine-light"><span class="svc-card__media"><img src="images/svc-check-engine-light-sm.webp" srcset="images/svc-check-engine-light-sm.webp 640w, images/svc-check-engine-light-lg.webp 910w" sizes="(min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Lit instrument cluster on a car dashboard during a diagnostic check" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">04</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">Diagnostics</span><span class="svc-card__desc">We find the cause, not just the code, and explain it before any repair.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
           <li><a class="svc-card" href="services.html#exhaust-repair"><span class="svc-card__media"><img src="images/svc-exhaust-repair-sm.webp" srcset="images/svc-exhaust-repair-sm.webp 640w, images/svc-exhaust-repair-lg.webp 800w" sizes="(min-width: 64rem) 30vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Underside of a car on a lift showing the exhaust pipes and mufflers" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">05</span><span class="svc-card__price">Quote on inspection</span></span><span class="svc-card__name">Exhaust</span><span class="svc-card__desc">Manifold leaks, pipes and mufflers. Quiet, sealed and passing emissions.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
@@ -173,11 +188,54 @@
       </div>
     </section>
 
+    <section class="section section--ink on-ink gallery" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="gallery__head">
+          <p class="label idx reveal">(03) In the bay</p>
+          <h2 class="heading" id="gallery-title" data-rise>From daily drivers to an R8.</h2>
+          <p class="gallery__lede reveal">Real cars from our bays on Sismet Rd. Whether it&rsquo;s a commuter or a supercar, you get the same straight quote and the same care.</p>
+        </div>
+        <ul class="gallery__list">
+          <li><figure class="gallery__item"><span class="gallery__media photo-reveal"><img src="images/shop-amg-sm.webp" srcset="images/shop-amg-sm.webp 480w, images/shop-amg-lg.webp 765w" sizes="(min-width: 60rem) 30vw, 78vw" width="765" height="1020" alt="White Mercedes-AMG sedan parked in the service bay" loading="lazy" decoding="async"></span><figcaption class="label">Mercedes-AMG</figcaption></figure></li>
+          <li><figure class="gallery__item"><span class="gallery__media photo-reveal"><img src="images/shop-bmw-m8-sm.webp" srcset="images/shop-bmw-m8-sm.webp 480w, images/shop-bmw-m8-lg.webp 765w" sizes="(min-width: 60rem) 30vw, 78vw" width="765" height="1020" alt="Black BMW 8 Series coupe at the open bay door" loading="lazy" decoding="async"></span><figcaption class="label">BMW 8 Series</figcaption></figure></li>
+          <li><figure class="gallery__item"><span class="gallery__media photo-reveal"><img src="images/shop-audi-r8-sm.webp" srcset="images/shop-audi-r8-sm.webp 480w, images/shop-audi-r8-lg.webp 765w" sizes="(min-width: 60rem) 30vw, 78vw" width="765" height="1020" alt="Black Audi R8 on a lift with the front wheels off and the hood open" loading="lazy" decoding="async"></span><figcaption class="label">Audi R8, wheels off</figcaption></figure></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="compare" aria-labelledby="compare-title">
+      <div class="wrap compare-wrap">
+        <div class="compare__head">
+          <p class="label idx reveal">(04) Why Fam&rsquo;s</p>
+          <h2 class="heading" id="compare-title" data-rise>Fam&rsquo;s vs the dealership.</h2>
+          <p class="muted reveal">Same factory-spec parts and fluids. A very different visit.</p>
+          <a class="btn btn--dark reveal" href="tel:+16477854560" data-phone>Call (647) 785-4560 <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="compare reveal">
+          <table>
+            <caption class="sr-only">How Fam&rsquo;s Automotive compares with a typical dealership</caption>
+            <thead><tr><td></td><th scope="col">Typical dealership</th><th scope="col"><span class="brand__mark" aria-hidden="true"></span>Fam&rsquo;s Automotive</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Who you talk to</th><td data-col="Dealership">A service advisor</td><td data-col="Fam&rsquo;s">The people who work on your car</td></tr>
+              <tr><th scope="row">Extra work</th><td data-col="Dealership">Often a menu of add-ons</td><td data-col="Fam&rsquo;s">Only what it needs. If it can wait, we say so</td></tr>
+              <tr><th scope="row">Your price</th><td data-col="Dealership">Dealer labour rates</td><td data-col="Fam&rsquo;s">Independent rates, quoted before we start</td></tr>
+              <tr><th scope="row">Hours</th><td data-col="Dealership">Often weekdays and short Saturdays</td><td data-col="Fam&rsquo;s">Mon to Sat, 9 am to 8 pm</td></tr>
+              <tr><th scope="row">Oil change</th><td data-col="Dealership">Drop it off and wait for a call</td><td data-col="Fam&rsquo;s">Often done in under 30 minutes</td></tr>
+              <tr><th scope="row">Makes</th><td data-col="Dealership">Mostly their own brand</td><td data-col="Fam&rsquo;s">Most makes, from daily drivers to an Audi R8</td></tr>
+              <tr><th scope="row">Warranty-safe maintenance</th><td data-col="Dealership">Yes</td><td data-col="Fam&rsquo;s">Yes: factory-spec parts and fluids, itemized invoice</td></tr>
+              <tr><th scope="row">Google rating</th><td data-col="Dealership">Varies</td><td data-col="Fam&rsquo;s">4.8 from 85 reviews</td></tr>
+            </tbody>
+          </table>
+          <p class="compare__note muted">Routine maintenance doesn&rsquo;t have to be done at the dealer to keep a factory warranty, as long as it&rsquo;s on schedule and to spec. Keep your invoices; ours are itemized.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--ink on-ink" id="reviews" aria-labelledby="reviews-title">
       <div class="wrap">
         <h2 class="sr-only" id="reviews-title">Fam's Automotive reviews</h2>
         <div class="quote-lead">
-          <p class="label idx reveal">(03) In their words &middot; 4.8 on Google</p>
+          <p class="label idx reveal">(05) In their words &middot; 4.8 on Google</p>
           <figure class="reveal">
             <blockquote><p>The team was straightforward, professional, and didn&rsquo;t try to upsell.</p></blockquote>
             <figcaption class="label">Fawaz H. &middot; Google review</figcaption>
@@ -203,10 +261,28 @@
       </div>
     </section>
 
+    <section class="section wait" aria-labelledby="wait-title">
+      <div class="wrap wait__grid">
+        <div class="wait__head">
+          <p class="label idx reveal">(06) The cost of waiting</p>
+          <h2 class="heading" id="wait-title" data-rise>Small noises turn into big bills.</h2>
+          <p class="muted reveal">It&rsquo;s almost never the whole car. It&rsquo;s usually one part, and it&rsquo;s cheapest the week you first notice it.</p>
+          <a class="btn btn--dark reveal" href="tel:+16477854560" data-phone>Call while it&rsquo;s a small job <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <ul class="wait__list">
+          <li><span class="wait__now">A squeal when you brake</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">Grinding metal on metal, then new rotors as well as pads</span></li>
+          <li><span class="wait__now">Ticking on a cold start</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">A bigger exhaust manifold leak, sometimes broken studs</span></li>
+          <li><span class="wait__now">A flashing check engine light</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">A damaged catalytic converter</span></li>
+          <li><span class="wait__now">Shifts getting harsh or slow</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">A gearbox repair instead of a fluid service</span></li>
+          <li><span class="wait__now">An overdue oil change</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">Sludge and extra engine wear</span></li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section section--paper process" aria-labelledby="process-title">
       <div class="wrap process__grid">
         <div class="process__head">
-          <p class="label idx reveal">(04) How it works</p>
+          <p class="label idx reveal">(07) How it works</p>
           <h2 class="heading" id="process-title" data-rise>No surprises at pickup.</h2>
           <p class="muted reveal">Every job runs the same way, from a 30-minute oil change to a gearbox service.</p>
           <a class="btn btn--dark reveal" href="contact.html#quote">Request a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
@@ -216,6 +292,28 @@
           <li><span class="process__num" aria-hidden="true">02</span><div><h3>We inspect, then quote</h3><p>A clear price, plus what&rsquo;s urgent and what can wait. Nothing gets touched until you approve it.</p></div></li>
           <li><span class="process__num" aria-hidden="true">03</span><div><h3>Drive away sorted</h3><p>We walk you through what we did, and the old parts are yours to see. The price is the one we quoted.</p></div></li>
         </ol>
+      </div>
+    </section>
+
+    <section class="section section--cream" id="faq" aria-labelledby="faq-title">
+      <div class="wrap home-faq">
+        <div class="home-faq__head">
+          <p class="label idx reveal">(08) Questions</p>
+          <h2 class="heading" id="faq-title" data-rise>Before you call.</h2>
+          <div class="area reveal">
+            <p class="label label--muted">Find us</p>
+            <address>1885 Sismet Rd, Unit 6N<br>Mississauga, ON L4W 1W8</address>
+            <p class="muted">Serving Mississauga, Malton, Brampton and Etobicoke.</p>
+            <a class="link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fam%27s+Automotive+Inc%2C+1885+Sismet+Rd+Unit+6N%2C+Mississauga%2C+ON+L4W+1W8" target="_blank" rel="noopener">Directions <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+        <div class="faq">
+          <details><summary>How much will my repair cost?</summary><p>Call with your car&rsquo;s year, make and model. For common jobs like oil changes and brakes we can usually give you the price on the phone. For anything else we inspect first and give you a written quote before any work starts.</p></details>
+          <details><summary>Do you work on BMW, Audi and Mercedes?</summary><p>Yes. Alongside everyday cars, our bays regularly see Audi, BMW and Mercedes-AMG models, including DSG gearbox services on Volkswagen and Audi.</p></details>
+          <details><summary>Are you open evenings and Saturdays?</summary><p>Yes. We&rsquo;re open Monday to Saturday, 9 am to 8 pm, so you can drop off before work or pick up after. Closed Sundays.</p></details>
+          <details><summary>Can I wait while you work on my car?</summary><p>For quick jobs, yes. There&rsquo;s a customer lounge, and many oil changes are done in under 30 minutes.</p></details>
+          <details><summary>Where are you?</summary><p>1885 Sismet Rd, Unit 6N, Mississauga, ON L4W 1W8. We look after drivers from across Mississauga, Malton, Brampton and Etobicoke.</p></details>
+        </div>
       </div>
     </section>
   </main>
@@ -267,7 +365,7 @@
       <p class="wordmark" aria-hidden="true"><span style="--c:0">F</span><span style="--c:1">A</span><span style="--c:2">M</span><span style="--c:3">’</span><span style="--c:4">S</span><span style="--c:5">&nbsp;</span><span style="--c:6">A</span><span style="--c:7">U</span><span style="--c:8">T</span><span style="--c:9">O</span><span style="--c:10">M</span><span style="--c:11">O</span><span style="--c:12">T</span><span style="--c:13">I</span><span style="--c:14">V</span><span style="--c:15">E</span></p>
       <div class="legal label">
         <p>&copy; <span data-year>2026</span> Fam's Automotive Inc.</p>
-        <p>Auto repair in Mississauga, Brampton, Etobicoke &amp; Oakville</p>
+        <p>Auto repair in Mississauga, Malton, Brampton &amp; Etobicoke</p>
       </div>
     </div>
   </footer>
@@ -277,6 +375,6 @@
     <a href="contact.html#quote">Request a quote</a>
   </nav>
 
-  <script src="js/main.js?v=20261026d" defer></script>
+  <script src="js/main.js?v=20261026e" defer></script>
 </body>
 </html>

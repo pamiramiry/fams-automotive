@@ -47,8 +47,8 @@
   };
 
   // Scroll-triggered motion
-  var ruled = '.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises';
-  document.querySelectorAll('.svc-grid, .faq, .quotes, .foot, .promises').forEach(function (list) {
+  var ruled = '.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises, .wait__list';
+  document.querySelectorAll('.svc-grid, .faq, .quotes, .foot, .promises, .wait__list').forEach(function (list) {
     Array.prototype.forEach.call(list.children, function (child, i) { child.style.setProperty('--c', i); });
   });
   var headings = document.querySelectorAll('[data-rise]');

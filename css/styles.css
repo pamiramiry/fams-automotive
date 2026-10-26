@@ -601,21 +601,21 @@ p { text-wrap: pretty; }
   .motion .svc__quote { --rc: var(--line); }
   .motion :is(.quotes, .foot) { --rc: rgba(236, 235, 229, 0.22); }
   .motion :is(.svc-grid, .faq) { --rc: var(--line-strong); }
-  .motion :is(.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises) { position: relative; border-top-color: transparent; }
-  .motion :is(.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises)::after {
+  .motion :is(.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises, .wait__list) { position: relative; border-top-color: transparent; }
+  .motion :is(.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises, .wait__list)::after {
     content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px; background: var(--rc);
     transform: scaleX(0); transform-origin: left;
     transition: transform calc(1.3s * var(--t)) var(--ease); transition-delay: calc(var(--i, 0) * 110ms);
   }
-  .motion .is-in:is(.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises)::after { transform: none; }
+  .motion .is-in:is(.process__steps li, .contact__block, .svc__quote, .svc-grid, .faq, .quotes, .foot, .promises, .wait__list)::after { transform: none; }
   .motion :is(.process__steps li, .contact__block, .svc__quote) > *,
-  .motion :is(.svc-grid, .faq, .quotes, .foot, .promises) > * {
+  .motion :is(.svc-grid, .faq, .quotes, .foot, .promises, .wait__list) > * {
     opacity: 0; transform: translateY(10px);
     transition: opacity calc(0.9s * var(--t)) var(--ease), transform calc(0.9s * var(--t)) var(--ease);
     transition-delay: calc(var(--i, 0) * 110ms + var(--c, 0) * 70ms + 280ms);
   }
   .motion .is-in:is(.process__steps li, .contact__block, .svc__quote) > *,
-  .motion .is-in:is(.svc-grid, .faq, .quotes, .foot, .promises) > * { opacity: 1; transform: none; }
+  .motion .is-in:is(.svc-grid, .faq, .quotes, .foot, .promises, .wait__list) > * { opacity: 1; transform: none; }
 
   /* Above the fold on load: the hero spec row and inner-page intro rule */
   .js :is(.specs, .page-hero__aside) { position: relative; border-top-color: transparent; }
@@ -665,3 +665,89 @@ p { text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
+
+/* ---------- Homepage sections added 2026-10-26 ---------- */
+/* The shop: real photo plus storefront and lounge thumbnails */
+.family__img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: #ddd4c4; }
+.family__thumbs { display: flex; gap: 1rem; margin-top: 0.75rem; }
+.family__thumbs figure { display: grid; gap: 0.45rem; }
+.family__thumbs img { display: block; height: 8.5rem; width: auto; object-fit: cover; }
+
+/* In the bay */
+.gallery__head { display: grid; gap: 1.5rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.gallery__lede { color: var(--stone-dark); max-width: 34rem; font-size: 1.0625rem; }
+.gallery__list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.gallery__item { display: grid; gap: 0.9rem; }
+.gallery__media { display: block; aspect-ratio: 3 / 4; overflow: hidden; background: var(--ink-3); }
+.gallery__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.9s var(--ease); }
+.gallery__item figcaption { color: var(--stone-dark); display: flex; align-items: center; gap: 0.6rem; }
+.gallery__item figcaption::before { content: ""; width: 0.45rem; height: 0.45rem; background: var(--signal); flex: none; }
+@media (hover: hover) and (pointer: fine) { .gallery__item:hover .gallery__media img { transform: scale(1.04); } }
+@media (min-width: 60rem) {
+  .gallery__head { grid-template-columns: 3fr 9fr; column-gap: 2rem; }
+  .gallery__head .heading, .gallery__lede { grid-column: 2; }
+}
+@media (max-width: 47.99rem) {
+  .gallery__list {
+    display: flex; gap: 0.75rem; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+    margin-inline: calc(var(--gutter) * -1); padding: 0 var(--gutter); scroll-padding-inline: var(--gutter); scrollbar-width: none;
+  }
+  .gallery__list::-webkit-scrollbar { display: none; }
+  .gallery__list li { flex: 0 0 78%; scroll-snap-align: start; }
+}
+
+/* Fam's vs the dealership */
+.compare-wrap { display: grid; gap: 2.5rem; }
+.compare__head { display: grid; gap: 1.25rem; justify-items: start; align-content: start; }
+.compare__head p { max-width: 24rem; }
+.compare table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.compare thead th { padding: 0 1.1rem 0.9rem; text-align: left; font: 500 0.75rem/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); vertical-align: bottom; }
+.compare thead th:last-child { padding-top: 1rem; background: var(--ink); color: var(--bone); }
+.compare thead .brand__mark { display: inline-block; width: 0.5rem; height: 0.5rem; margin-right: 0.55rem; vertical-align: 0.05em; }
+.compare tbody th { padding: 1.15rem 1.1rem 1.15rem 0; text-align: left; font-weight: 600; letter-spacing: -0.01em; border-top: 1px solid var(--line); }
+.compare tbody td { padding: 1.15rem 1.1rem; border-top: 1px solid var(--line); color: var(--stone); }
+.compare tbody td:last-child { background: var(--ink); color: var(--bone); border-top-color: rgba(236, 235, 229, 0.12); font-weight: 500; }
+.compare tbody tr:last-child td:last-child { padding-bottom: 1.4rem; }
+.compare tbody tr:first-child > * { border-top-color: var(--line-strong); }
+.compare__note { margin-top: 1.25rem; font-size: 0.9375rem; max-width: 40rem; }
+@media (min-width: 60rem) {
+  .compare-wrap { grid-template-columns: 4fr 8fr; column-gap: 2rem; align-items: start; }
+  .compare__head { position: sticky; top: calc(var(--header-h) + 3rem); }
+}
+@media (max-width: 39.99rem) {
+  .compare thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .compare table, .compare tbody { display: block; }
+  .compare tbody tr { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-strong); padding: 1rem 0 1.15rem; }
+  .compare tbody th { grid-column: 1 / -1; padding: 0 0 0.75rem; border: 0; font-size: 1.05rem; }
+  .compare tbody td { display: grid; gap: 0.35rem; align-content: start; padding: 0.85rem 0.9rem; border: 0; font-size: 0.9375rem; line-height: 1.45; }
+  .compare tbody td::before { content: attr(data-col); font: 500 0.6875rem/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); }
+  .compare tbody td:last-child::before { color: var(--stone-dark); }
+  .compare tbody td:first-child { background: rgba(13, 14, 13, 0.04); }
+}
+
+/* The cost of waiting */
+.wait__grid { display: grid; gap: 2.5rem; }
+.wait__head { display: grid; gap: 1.25rem; justify-items: start; align-content: start; }
+.wait__head p { max-width: 26rem; }
+.wait__list { list-style: none; padding: 0; border-top: 1px solid var(--line-strong); }
+.wait__list li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.4rem 0.75rem; padding: 1.25rem 0 1.35rem; border-bottom: 1px solid var(--line); }
+.wait__now { grid-column: 1 / -1; font-weight: 600; font-size: 1.125rem; letter-spacing: -0.01em; }
+.wait__arrow { width: 1rem; height: 1rem; margin-top: 0.3rem; fill: none; stroke: var(--signal-ink); stroke-width: 1.6; }
+.wait__later { color: var(--stone); }
+@media (min-width: 48rem) {
+  .wait__list li { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 1.5rem; align-items: baseline; padding: 1.5rem 0; }
+  .wait__now { grid-column: auto; }
+  .wait__arrow { align-self: center; margin: 0; }
+}
+@media (min-width: 60rem) {
+  .wait__grid { grid-template-columns: 5fr 7fr; column-gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+  .wait__head { position: sticky; top: calc(var(--header-h) + 3rem); }
+}
+
+/* Homepage questions + where to find us */
+.home-faq { display: grid; gap: 2.5rem; }
+.home-faq__head { display: grid; gap: 1.5rem; align-content: start; }
+.area { display: grid; gap: 0.6rem; justify-items: start; padding-top: 1.25rem; border-top: 1px solid var(--line-strong); max-width: 22rem; }
+.area address { font-style: normal; font-size: 1.15rem; line-height: 1.4; }
+.home-faq .faq { max-width: none; }
+@media (min-width: 60rem) { .home-faq { grid-template-columns: 4fr 8fr; column-gap: 2rem; align-items: start; } }

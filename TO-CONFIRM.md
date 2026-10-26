@@ -12,6 +12,12 @@
 - Google profile link: https://share.google/P5KAsRLT8g4FF58c0 (reviews links and schema hasMap).
 - Hero video: images/hero-mobile.webm / .mp4 (720x1280, 13.6s, supplied by the user). Phones only; desktop keeps the light band. Confirm the clip's licence before launch.
 
+## New homepage sections (2026-10-26): confirm these claims
+- Comparison table "Fam's vs the dealership": every row, especially "Most makes, from daily drivers to an Audi R8", "Independent rates, quoted before we start", "factory-spec parts and fluids, itemized invoice". Dealer column is written as "often/typical" on purpose.
+- FAQ: "our bays regularly see Audi, BMW and Mercedes-AMG", customer lounge, price on the phone for common jobs.
+- Cost of waiting list (general car advice, phrased as what it can turn into).
+- Bigger versions of the storefront and waiting-room photos (currently 224 and 141 px wide) would look sharper.
+
 ## Later
 - Real photos (shop front, bays, team, the 7 services). Same file names in images/.
 - Areas served: Mississauga, Brampton, Etobicoke, Oakville (schema + footer).
