@@ -1,16 +1,16 @@
 # To confirm with Fam's Automotive before launch
 
-## Missing (site shows placeholders)
-Find/replace across index.html, services.html, contact.html:
-- `tel:+10000000000` and `+1-000-000-0000` -> real phone; `[Phone number]` on contact.html -> display format
-- `[STREET ADDRESS]` / `[Street address]`, `[POSTAL CODE]` / `[Postal code]`
-- City: assumed **Mississauga** everywhere (titles, H1s, schema). Change if wrong.
-- `[GOOGLE BUSINESS PROFILE URL]`, `[GOOGLE REVIEWS URL]`, `[GOOGLE MAPS DIRECTIONS URL]`
-- `[FORM ENDPOINT]` (e.g. Formspree). Until set, the form asks people to call.
+## Filled in 2026-10-26 (from the Google Business Profile the user sent)
+- 1885 Sismet Rd Unit 6N, Mississauga, ON L4W 1W8 · (647) 785-4560
+- Hours: Mon to Sat 9 am to 8 pm, Sunday closed (contact table, footer, schema)
+- Rating shown as text: 4.8 from 85 Google reviews (hero spec row, reviews label). Update the number now and then. Still no aggregateRating schema on purpose.
+- Map links use a Google Maps search for the address. Swap in the exact profile and review links (share link from the profile) when available.
+
+## Still missing
+- `[FORM ENDPOINT]` on contact.html (e.g. Formspree). Until set, the form asks people to call.
 - Domain: assumed `famsautomotive.ca` (canonical, OG, schema, robots.txt, sitemap.xml)
-- Hours: placeholder Mon-Fri 9-6, Sat 9-3, Sun closed (contact.html table + schema on index/contact). The "Open now" badge reads the table.
 - Areas served: Mississauga, Brampton, Etobicoke, Oakville (schema + footer)
-- Real photos (shop front, bays, team). The hero works without any, but the services page and a "meet the family" block would benefit.
+- Real photos (shop front, bays, team, the 7 services)
 
 ## Prices (site shows "From $XX")
 Home page service list and services page: oil change, brakes (per axle), transmission/DSG, diagnostics, tune-up. Exhaust and suspension say "Quote on inspection". Also confirm the note "Prices include labour. Parts vary by vehicle. HST extra."

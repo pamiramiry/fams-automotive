@@ -499,7 +499,7 @@ p { text-wrap: pretty; }
 .hours th, .hours td { padding: 0.7rem 0; border-bottom: 1px solid var(--line); font-weight: 400; text-align: left; }
 .hours td { text-align: right; }
 .hours .is-today th, .hours .is-today td { font-weight: 600; }
-.hours .is-today th::after { content: " · Today"; font: 500 0.7rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal-ink); }
+.hours .is-today th::after { content: "· Today"; margin-left: 0.5em; font: 500 0.7rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal-ink); }
 
 .form { display: grid; gap: 0.25rem; }
 
