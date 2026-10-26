@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css?v=20261026g">
+  <link rel="stylesheet" href="css/styles.css?v=20261027a">
   <script>document.documentElement.classList.add('js')</script>
 
   <script type="application/ld+json">
@@ -85,8 +85,8 @@
         "@id": "https://fams-automotive-teal.vercel.app/#faq",
         "mainEntity": [
           { "@type": "Question", "name": "How much will my repair cost?", "acceptedAnswer": { "@type": "Answer", "text": "Call with your car’s year, make and model. For common jobs like oil changes and brakes we can usually give you the price on the phone. For anything else we inspect first and give you a written quote before any work starts." } },
-          { "@type": "Question", "name": "Do you work on BMW, Audi and Mercedes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alongside everyday cars, our bays regularly see Audi, BMW and Mercedes-AMG models, including DSG gearbox services on Volkswagen and Audi." } },
-          { "@type": "Question", "name": "Are you open evenings and Saturdays?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We’re open Monday to Saturday, 9 am to 8 pm, so you can drop off before work or pick up after. Closed Sundays." } },
+          { "@type": "Question", "name": "Do you work on all makes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all makes and models: Honda, Toyota, Ford, Hyundai and Nissan through to Audi, BMW and Mercedes-AMG, including DSG gearbox services on Volkswagen and Audi." } },
+          { "@type": "Question", "name": "Are you open evenings and Saturdays?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We’re open Mon to Sat, 9 am to 8 pm, so you can drop off before work or pick up after. Closed Sundays." } },
           { "@type": "Question", "name": "Can I wait while you work on my car?", "acceptedAnswer": { "@type": "Answer", "text": "For quick jobs, yes. There’s a customer lounge, and many oil changes are done in under 30 minutes." } },
           { "@type": "Question", "name": "Do you do Ontario safety certificates?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We inspect the car to the Ontario safety standard for buying, selling or transferring ownership. If something doesn’t pass, we show you what and why, and quote the repair before doing anything." } },
           { "@type": "Question", "name": "Where are you?", "acceptedAnswer": { "@type": "Answer", "text": "1885 Sismet Rd, Unit 6N, Mississauga, ON L4W 1W8. We look after drivers from across Mississauga, Malton, Brampton and Etobicoke." } }
@@ -110,8 +110,8 @@
   <div class="menu" id="menu">
     <nav aria-label="Mobile"><ol><li><a class="menu__link" href="./"><span class="label">01</span>Home</a></li><li><a class="menu__link" href="services.html"><span class="label">02</span>Services</a></li><li><a class="menu__link" href="#reviews"><span class="label">03</span>Reviews</a></li><li><a class="menu__link" href="contact.html"><span class="label">04</span>Contact</a></li></ol></nav>
     <div class="menu__foot">
-      <a class="btn btn--light" href="tel:+16477854560" data-phone>Call the shop <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn--outline-light" href="contact.html#quote">Request a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--light" href="tel:+16477854560" data-phone><span class="only-touch">Call the shop</span><span class="only-desk">Call (647) 785-4560</span> <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn--outline-light" href="sms:+16477854560?&amp;body=Hi%20Ahmad%2C%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20(year%2C%20make%2C%20model)%20and%20it%20needs%3A%20">Text for a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
 
@@ -121,16 +121,18 @@
       <div class="hero__main">
         <div class="wrap hero__inner">
           <p class="hero__kicker label in" style="--d:0">Family-owned &middot; Mississauga, ON</p>
-          <h1 class="hero__title display" id="hero-title"><span class="line"><span style="--d:120">Honest auto</span></span> <span class="line"><span style="--d:220">repair in</span></span> <span class="line"><span style="--d:320">Mississauga</span></span></h1>
-          <p class="hero__sub in" style="--d:600">Straight quotes, fair prices and no upselling, from a family-run shop that treats your car like its own. Oil changes, brakes, safety certificates, transmission and DSG service, diagnostics and exhaust.</p>
-          <div class="hero__actions in" style="--d:760">
-            <a class="btn btn--light" href="tel:+16477854560" data-phone>Call the shop <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-            <a class="btn btn--outline-light" href="contact.html#quote">Request a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <h1 class="hero__title display" id="hero-title"><span class="line"><span style="--d:0">Honest auto</span></span> <span class="line"><span style="--d:50">repair in</span></span> <span class="line"><span style="--d:100">Mississauga</span></span></h1>
+          <p class="hero__sub in" style="--d:80">Straight quotes, fair prices and no upselling, from a family-run shop that treats your car like its own. Oil changes, brakes, safety certificates, transmission and DSG service, diagnostics and exhaust.</p>
+          <div class="hero__actions in" style="--d:120">
+            <a class="btn btn--light" href="tel:+16477854560" data-phone><span class="only-touch">Call the shop</span><span class="only-desk">Call (647) 785-4560</span> <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--outline-light only-touch" href="sms:+16477854560?&amp;body=Hi%20Ahmad%2C%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20(year%2C%20make%2C%20model)%20and%20it%20needs%3A%20">Text for a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--outline-light only-desk" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fam%27s+Automotive+Inc%2C+1885+Sismet+Rd+Unit+6N%2C+Mississauga%2C+ON+L4W+1W8" target="_blank" rel="noopener">Get directions <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
           </div>
+          <p class="hero__note label in only-touch" style="--d:160">Text Ahmad directly &middot; replies during shop hours</p>
         </div>
       </div>
       <div class="wrap">
-        <ul class="specs in" style="--d:950">
+        <ul class="specs in" style="--d:220">
           <li><span class="label">Quote</span><strong>Before any work starts</strong></li>
           <li><span class="label">We service</span><strong>All makes and models</strong></li>
           <li><span class="label">Hours</span><strong>Mon to Sat, 9 am to 8 pm</strong></li>
@@ -171,23 +173,23 @@
       <div class="wrap">
         <div class="price-head">
           <p class="label idx reveal">(02) Services &amp; prices</p>
-          <h2 class="heading" id="services-title" data-rise>What we fix, and what it costs.</h2>
+          <h2 class="heading" id="services-title" data-rise>What we fix, priced before we start.</h2>
           <div class="price-head__aside reveal">
-            <p class="muted">Fair, upfront prices on everyday work. Your exact price depends on the car, so call with the year, make and model and we&rsquo;ll confirm it before you come in.</p>
+            <p class="muted">Fair, upfront prices on everyday work. The exact price depends on the car, so we confirm it before you come in.</p>
             <a class="link" href="services.html">All services <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
         <ul class="svc-grid">
-          <li><a class="svc-card" href="services.html#oil-change"><span class="svc-card__media"><img src="images/svc-oil-change-sm.webp" srcset="images/svc-oil-change-sm.webp 640w, images/svc-oil-change-lg.webp 1024w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Engine bay with the oil filler cap on a red valve cover, ready for an oil change" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">01</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">Oil change</span><span class="svc-card__desc">Right oil, new filter, a real look underneath. Often done in under 30 minutes.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
-          <li><a class="svc-card" href="services.html#brake-repair"><span class="svc-card__media"><img src="images/svc-brake-repair-sm.webp" srcset="images/svc-brake-repair-sm.webp 640w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Audi R8 on a lift with the wheel off, showing the red brake caliper and rotor" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">02</span><span class="svc-card__price">From $XX / axle</span></span><span class="svc-card__name">Brakes</span><span class="svc-card__desc">Pads, rotors, calipers and fluid. Measured first, so you only replace what&rsquo;s worn.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
-          <li><a class="svc-card" href="services.html#safety-certificate"><span class="svc-card__media"><img src="images/svc-safety-certificate-sm.webp" srcset="images/svc-safety-certificate-sm.webp 640w, images/svc-safety-certificate-lg.webp 765w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="White Audi raised on a two-post lift for an inspection in the Fam&rsquo;s Automotive bay" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">03</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">Safety certificates</span><span class="svc-card__desc">Ontario safety for buying, selling or transferring a car. Straight answers on what passes.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
-          <li><a class="svc-card" href="services.html#transmission-service"><span class="svc-card__media"><img src="images/svc-transmission-service-sm.webp" srcset="images/svc-transmission-service-sm.webp 640w, images/svc-transmission-service-lg.webp 844w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Close-up of transmission gears and housing during a gearbox service" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">04</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">Transmission &amp; DSG</span><span class="svc-card__desc">Automatic, CVT and VW / Audi DSG fluid services, with OEM-spec fluid.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
-          <li><a class="svc-card" href="services.html#check-engine-light"><span class="svc-card__media"><img src="images/svc-check-engine-light-sm.webp" srcset="images/svc-check-engine-light-sm.webp 640w, images/svc-check-engine-light-lg.webp 910w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Lit instrument cluster on a car dashboard during a diagnostic check" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">05</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">Diagnostics</span><span class="svc-card__desc">We find the cause, not just the code, and explain it before any repair.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
+          <li><a class="svc-card" href="services.html#oil-change"><span class="svc-card__media"><img src="images/svc-oil-change-sm.webp" srcset="images/svc-oil-change-sm.webp 640w, images/svc-oil-change-lg.webp 1024w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Engine bay with the oil filler cap on a red valve cover, ready for an oil change" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">01</span><span class="svc-card__price">Quote by text</span></span><span class="svc-card__name">Oil change</span><span class="svc-card__desc">Right oil, new filter, a real look underneath. Often done in under 30 minutes.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
+          <li><a class="svc-card" href="services.html#brake-repair"><span class="svc-card__media"><img src="images/svc-brake-repair-sm.webp" srcset="images/svc-brake-repair-sm.webp 640w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Audi R8 on a lift with the wheel off, showing the red brake caliper and rotor" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">02</span><span class="svc-card__price">Quote by text</span></span><span class="svc-card__name">Brakes</span><span class="svc-card__desc">Pads, rotors, calipers and fluid. Measured first, so you only replace what&rsquo;s worn.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
+          <li><a class="svc-card" href="services.html#safety-certificate"><span class="svc-card__media"><img src="images/svc-safety-certificate-sm.webp" srcset="images/svc-safety-certificate-sm.webp 640w, images/svc-safety-certificate-lg.webp 765w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="White Audi raised on a two-post lift for an inspection in the Fam&rsquo;s Automotive bay" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">03</span><span class="svc-card__price">Quote by text</span></span><span class="svc-card__name">Safety certificates</span><span class="svc-card__desc">Ontario safety for buying, selling or transferring a car. Straight answers on what passes.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
+          <li><a class="svc-card" href="services.html#transmission-service"><span class="svc-card__media"><img src="images/svc-transmission-service-sm.webp" srcset="images/svc-transmission-service-sm.webp 640w, images/svc-transmission-service-lg.webp 844w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Close-up of transmission gears and housing during a gearbox service" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">04</span><span class="svc-card__price">Quote by text</span></span><span class="svc-card__name">Transmission &amp; DSG</span><span class="svc-card__desc">Automatic, CVT and VW / Audi DSG fluid services, with OEM-spec fluid.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
+          <li><a class="svc-card" href="services.html#check-engine-light"><span class="svc-card__media"><img src="images/svc-check-engine-light-sm.webp" srcset="images/svc-check-engine-light-sm.webp 640w, images/svc-check-engine-light-lg.webp 910w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Lit instrument cluster on a car dashboard during a diagnostic check" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">05</span><span class="svc-card__price">Quote by text</span></span><span class="svc-card__name">Diagnostics</span><span class="svc-card__desc">We find the cause, not just the code, and explain it before any repair.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
           <li><a class="svc-card" href="services.html#suspension-repair"><span class="svc-card__media"><img src="images/svc-suspension-repair-sm.webp" srcset="images/svc-suspension-repair-sm.webp 640w, images/svc-suspension-repair-lg.webp 1024w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Front strut, coil spring and brake assembly with the wheel removed" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">06</span><span class="svc-card__price">Quote on inspection</span></span><span class="svc-card__name">Suspension</span><span class="svc-card__desc">Shocks, struts, control arms and lowering springs. Clunks found and fixed.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
           <li><a class="svc-card" href="services.html#exhaust-repair"><span class="svc-card__media"><img src="images/svc-exhaust-repair-sm.webp" srcset="images/svc-exhaust-repair-sm.webp 640w, images/svc-exhaust-repair-lg.webp 800w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Underside of a car on a lift showing the exhaust pipes and mufflers" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">07</span><span class="svc-card__price">Quote on inspection</span></span><span class="svc-card__name">Exhaust</span><span class="svc-card__desc">Manifold leaks, pipes and mufflers. Quiet, sealed and passing emissions.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
-          <li><a class="svc-card" href="services.html#ac-repair"><span class="svc-card__media"><img src="images/svc-ac-repair-sm.webp" srcset="images/svc-ac-repair-sm.webp 640w, images/svc-ac-repair-lg.webp 911w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Engine bay under the hood, where the A/C lines and compressor sit" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">08</span><span class="svc-card__price">From $XX</span></span><span class="svc-card__name">A/C recharge</span><span class="svc-card__desc">Leak check first, then a recharge to spec, so the cold air lasts.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
+          <li><a class="svc-card" href="services.html#ac-repair"><span class="svc-card__media"><img src="images/svc-ac-repair-sm.webp" srcset="images/svc-ac-repair-sm.webp 640w, images/svc-ac-repair-lg.webp 911w" sizes="(min-width: 72rem) 22vw, (min-width: 40rem) 46vw, 40vw" width="640" height="480" alt="Engine bay under the hood, where the A/C lines and compressor sit" loading="lazy" decoding="async"></span><span class="svc-card__body"><span class="svc-card__meta"><span class="label">08</span><span class="svc-card__price">Quote by text</span></span><span class="svc-card__name">A/C recharge</span><span class="svc-card__desc">Leak check first, then a recharge to spec, so the cold air lasts.</span><span class="svc-card__more">Details <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></span></a></li>
         </ul>
-        <p class="price-note label label--muted reveal">Prices include labour. Parts vary by vehicle. HST extra.</p>
+        <p class="price-note label label--muted reveal">Text us your year, make and model and we&rsquo;ll send a price before you come in.</p>
       </div>
     </section>
 
@@ -221,14 +223,15 @@
             <tbody>
               <tr><th scope="row">Who you talk to</th><td data-col="Dealership">A service advisor</td><td data-col="Fam&rsquo;s">The people who work on your car</td></tr>
               <tr><th scope="row">Extra work</th><td data-col="Dealership">Often a menu of add-ons</td><td data-col="Fam&rsquo;s">Only what it needs. If it can wait, we say so</td></tr>
-              <tr><th scope="row">Your price</th><td data-col="Dealership">Dealer labour rates</td><td data-col="Fam&rsquo;s">Independent rates, quoted before we start</td></tr>
+              <tr><th scope="row">Tools &amp; price</th><td data-col="Dealership">Dealer tools at dealer rates</td><td data-col="Fam&rsquo;s">Dealer-level tools at independent rates, quoted before we start</td></tr>
               <tr><th scope="row">Hours</th><td data-col="Dealership">Often weekdays and short Saturdays</td><td data-col="Fam&rsquo;s">Mon to Sat, 9 am to 8 pm</td></tr>
-              <tr><th scope="row">Oil change</th><td data-col="Dealership">Drop it off and wait for a call</td><td data-col="Fam&rsquo;s">Often done in under 30 minutes</td></tr>
-              <tr><th scope="row">Makes</th><td data-col="Dealership">Mostly their own brand</td><td data-col="Fam&rsquo;s">Most makes, from daily drivers to an Audi R8</td></tr>
-              <tr><th scope="row">Warranty-safe maintenance</th><td data-col="Dealership">Yes</td><td data-col="Fam&rsquo;s">Yes: factory-spec parts and fluids, itemized invoice</td></tr>
-              <tr><th scope="row">Google rating</th><td data-col="Dealership">Varies</td><td data-col="Fam&rsquo;s">4.8 from 85 reviews</td></tr>
+              <tr class="compare__extra"><th scope="row">Oil change</th><td data-col="Dealership">Drop it off and wait for a call</td><td data-col="Fam&rsquo;s">Often done in under 30 minutes</td></tr>
+              <tr class="compare__extra"><th scope="row">Makes</th><td data-col="Dealership">Mostly their own brand</td><td data-col="Fam&rsquo;s">All makes, from Honda and Toyota to an Audi R8</td></tr>
+              <tr class="compare__extra"><th scope="row">Warranty-safe maintenance</th><td data-col="Dealership">Yes</td><td data-col="Fam&rsquo;s">Yes: factory-spec parts and fluids, itemized invoice</td></tr>
+              <tr class="compare__extra"><th scope="row">Google rating</th><td data-col="Dealership">Varies</td><td data-col="Fam&rsquo;s">4.8 from 85 reviews</td></tr>
             </tbody>
           </table>
+          <button class="compare__toggle" type="button" aria-expanded="false" hidden>See full comparison</button>
           <p class="compare__note muted">Routine maintenance doesn&rsquo;t have to be done at the dealer to keep a factory warranty, as long as it&rsquo;s on schedule and to spec. Keep your invoices; ours are itemized.</p>
         </div>
       </div>
@@ -277,10 +280,8 @@
         </div>
         <ul class="wait__list">
           <li><span class="wait__now">A squeal when you brake</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">Grinding metal on metal, then new rotors as well as pads</span></li>
-          <li><span class="wait__now">Ticking on a cold start</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">A bigger exhaust manifold leak, sometimes broken studs</span></li>
           <li><span class="wait__now">A flashing check engine light</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">A damaged catalytic converter</span></li>
           <li><span class="wait__now">Shifts getting harsh or slow</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">A gearbox repair instead of a fluid service</span></li>
-          <li><span class="wait__now">An overdue oil change</span><svg class="wait__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg><span class="wait__later">Sludge and extra engine wear</span></li>
         </ul>
       </div>
     </section>
@@ -291,7 +292,8 @@
           <p class="label idx reveal">(07) How it works</p>
           <h2 class="heading" id="process-title" data-rise>No surprises at pickup.</h2>
           <p class="muted reveal">Every job runs the same way, from a 30-minute oil change to a gearbox service.</p>
-          <a class="btn btn--dark reveal" href="contact.html#quote">Request a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--dark reveal only-touch" href="sms:+16477854560?&amp;body=Hi%20Ahmad%2C%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20(year%2C%20make%2C%20model)%20and%20it%20needs%3A%20">Text for a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn--dark reveal only-desk" href="tel:+16477854560" data-phone>Call (647) 785-4560 <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
         </div>
         <ol class="process__steps">
           <li><span class="process__num" aria-hidden="true">01</span><div><h3>Call or request a quote</h3><p>Tell us the year, make and model and what it&rsquo;s doing. You get a ballpark on the phone and a time that suits you.</p></div></li>
@@ -315,8 +317,8 @@
         </div>
         <div class="faq">
           <details><summary>How much will my repair cost?</summary><p>Call with your car&rsquo;s year, make and model. For common jobs like oil changes and brakes we can usually give you the price on the phone. For anything else we inspect first and give you a written quote before any work starts.</p></details>
-          <details><summary>Do you work on BMW, Audi and Mercedes?</summary><p>Yes. Alongside everyday cars, our bays regularly see Audi, BMW and Mercedes-AMG models, including DSG gearbox services on Volkswagen and Audi.</p></details>
-          <details><summary>Are you open evenings and Saturdays?</summary><p>Yes. We&rsquo;re open Monday to Saturday, 9 am to 8 pm, so you can drop off before work or pick up after. Closed Sundays.</p></details>
+          <details><summary>Do you work on all makes?</summary><p>Yes, all makes and models: Honda, Toyota, Ford, Hyundai and Nissan through to Audi, BMW and Mercedes-AMG, including DSG gearbox services on Volkswagen and Audi.</p></details>
+          <details><summary>Are you open evenings and Saturdays?</summary><p>Yes. We&rsquo;re open Mon to Sat, 9 am to 8 pm, so you can drop off before work or pick up after. Closed Sundays.</p></details>
           <details><summary>Can I wait while you work on my car?</summary><p>For quick jobs, yes. There&rsquo;s a customer lounge, and many oil changes are done in under 30 minutes.</p></details>
           <details><summary>Do you do Ontario safety certificates?</summary><p>Yes. We inspect the car to the Ontario safety standard for buying, selling or transferring ownership. If something doesn&rsquo;t pass, we show you what and why, and quote the repair before doing anything.</p></details>
           <details><summary>Where are you?</summary><p>1885 Sismet Rd, Unit 6N, Mississauga, ON L4W 1W8. We look after drivers from across Mississauga, Malton, Brampton and Etobicoke.</p></details>
@@ -335,8 +337,9 @@
         <div class="closing__cta reveal" style="--i:1">
           <p>Call with your car&rsquo;s year, make and model. You&rsquo;ll have a price before you drive over.</p>
           <div class="closing__btns">
-            <a class="btn btn--light" href="tel:+16477854560" data-phone>Call the shop <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
-            <a class="btn btn--outline-light" href="contact.html#quote">Request a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--light" href="tel:+16477854560" data-phone><span class="only-touch">Call the shop</span><span class="only-desk">Call (647) 785-4560</span> <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--outline-light only-touch" href="sms:+16477854560?&amp;body=Hi%20Ahmad%2C%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20(year%2C%20make%2C%20model)%20and%20it%20needs%3A%20">Text for a quote <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--outline-light only-desk" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fam%27s+Automotive+Inc%2C+1885+Sismet+Rd+Unit+6N%2C+Mississauga%2C+ON+L4W+1W8" target="_blank" rel="noopener">Get directions <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
       </div>
@@ -365,7 +368,7 @@
           <h2 class="label">Contact</h2>
           <ul>
             <li><a href="tel:+16477854560" data-phone>Call the shop</a></li>
-            <li><a href="contact.html#quote">Request a quote</a></li>
+            <li class="only-touch"><a href="sms:+16477854560?&amp;body=Hi%20Ahmad%2C%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20(year%2C%20make%2C%20model)%20and%20it%20needs%3A%20">Text for a quote</a></li>
             <li><a href="contact.html#hours">Hours &amp; directions</a></li>
             <li><a href="https://share.google/P5KAsRLT8g4FF58c0" rel="noopener" target="_blank">Google reviews</a></li>
           </ul>
@@ -380,10 +383,10 @@
   </footer>
 
   <nav class="mbar" aria-label="Quick contact">
-    <a href="tel:+16477854560" data-phone><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Call the shop</a>
-    <a href="contact.html#quote">Request a quote</a>
+    <a href="tel:+16477854560" data-phone><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Call</a>
+    <a href="sms:+16477854560?&amp;body=Hi%20Ahmad%2C%20I%27d%20like%20a%20quote.%20My%20car%20is%20a%20(year%2C%20make%2C%20model)%20and%20it%20needs%3A%20"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg> Text for a quote</a>
   </nav>
 
-  <script src="js/main.js?v=20261026g" defer></script>
+  <script src="js/main.js?v=20261027a" defer></script>
 </body>
 </html>

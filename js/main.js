@@ -7,6 +7,7 @@
   var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
   // Scroll-triggered hidden states in the CSS only apply once this class is on
   root.classList.add('motion');
+  addEventListener('error', function () { root.classList.remove('motion'); });
 
   // Footer year
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
@@ -61,9 +62,19 @@
         if (e.target.hasAttribute('data-rise')) splitRise(e.target);
         else e.target.classList.add('is-in');
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
+    }, { rootMargin: '0px', threshold: 0 });
     watched.forEach(function (el) { io.observe(el); });
     headings.forEach(function (el) { io.observe(el); });
+    var revealVisible = function () {
+      watched.forEach(function (el) {
+        if (!el.classList.contains('is-in') && el.getBoundingClientRect().top < innerHeight) { io.unobserve(el); el.classList.add('is-in'); }
+      });
+      headings.forEach(function (el) {
+        if (!el.classList.contains('split') && el.getBoundingClientRect().top < innerHeight) { io.unobserve(el); splitRise(el); }
+      });
+    };
+    var armSafety = function () { setTimeout(revealVisible, 2500); };
+    if (document.readyState === 'complete') armSafety(); else addEventListener('load', armSafety);
     // Safety net: a fast fling can skip an element between frames, so once scrolling settles,
     // reveal anything that is already above the bottom of the screen.
     var settle;
@@ -136,7 +147,7 @@
   if (mbar) {
     var setBar = function (on) {
       mbar.classList.toggle('is-on', on);
-      root.style.setProperty('--mbar-h', on && innerWidth < 960 ? '60px' : '0px');
+      root.style.setProperty('--mbar-h', innerWidth < 960 ? '60px' : '0px');
     };
     if (hero && 'IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) { setBar(!entries[0].isIntersecting); }, { threshold: 0 }).observe(hero);
@@ -169,6 +180,18 @@
     qList.addEventListener('scroll', function () { if (!qTick) { qTick = true; requestAnimationFrame(function () { qTick = false; qPaint(); }); } }, { passive: true });
     addEventListener('resize', qPaint);
     qPaint();
+  }
+
+  // Comparison: phones see 4 rows, the button shows the rest
+  var cmp = document.querySelector('.compare');
+  var cmpBtn = cmp && cmp.querySelector('.compare__toggle');
+  if (cmpBtn) {
+    cmpBtn.hidden = false;
+    cmpBtn.addEventListener('click', function () {
+      var open = cmp.classList.toggle('is-open');
+      cmpBtn.setAttribute('aria-expanded', String(open));
+      cmpBtn.textContent = open ? 'Show less' : 'See full comparison';
+    });
   }
 
   // Services page: one underline that slides to the jump link for the section in view

@@ -21,7 +21,7 @@
 ## From the Google reviews (2026-10-26)
 - Team named in copy: "Ahmad, his father and Amir" (family section). Reviews also mention Abu Ahmad and Diab. Confirm names and spelling (Ahmad vs Ahmed).
 - Hero spec row says "We service: All makes and models" (reviews cover European cars, a van, a Lincoln Town Car; one says "Anything mechanical you need they do it"). Confirm.
-- New services added from reviews: Ontario safety certificates and A/C recharge (services page sections, home cards, footer, quote form). Prices "From $XX".
+- New services added from reviews: Ontario safety certificates and A/C recharge (services page sections, home cards, footer, quote form). Shown as "Quote by text".
 - Reviews quoted with first name + initial: Ali A., Ernest K., Yahya S., Iceyy D., Fawaz H., Maged F., Deep O., Rajwinder R., Pezhvak V., Ryan, Brandon, Tushar K. Two quotes include prices the customers paid ($220 diffs + trans fluid, $100 A/C recharge + diagnostic); remove them if prices have changed.
 - Not used on purpose: the two negative reviews and the "Ahmad Safi" review.
 
@@ -29,7 +29,7 @@
 - Real photos (shop front, bays, team, the 7 services). Same file names in images/.
 - Areas served: Mississauga, Brampton, Etobicoke, Oakville (schema + footer).
 
-## Prices (site shows "From $XX")
+## Prices (site shows "Quote by text")
 Home page service list and services page: oil change, brakes (per axle), transmission/DSG, diagnostics, tune-up. Exhaust and suspension say "Quote on inspection". Also confirm the note "Prices include labour. Parts vary by vehicle. HST extra."
 
 ## Owner's note and photo

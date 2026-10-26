@@ -60,8 +60,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  padding-bottom: var(--mbar-h);
 }
+@media (max-width: 59.99rem) { body { padding-bottom: calc(60px + env(safe-area-inset-bottom)); } }
 img, svg, video, iframe { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -224,12 +224,13 @@ p { text-wrap: pretty; }
 @media (max-width: 59.99rem) {
   .hero__video { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.4s var(--ease); }
   .hero__video.is-playing { opacity: 0.8; }
+  .hero__kicker, .hero__sub, .hero__note { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5); }
   .hero__shade {
     display: block; position: absolute; inset: 0;
     background:
-      linear-gradient(to bottom, rgba(13, 14, 13, 0.75) 0%, rgba(13, 14, 13, 0) 22%),
+      linear-gradient(to bottom, rgba(13, 14, 13, 0.85) 0%, rgba(13, 14, 13, 0) 26%),
       linear-gradient(to top, rgba(13, 14, 13, 0.85) 0%, rgba(13, 14, 13, 0) 35%),
-      radial-gradient(90% 45% at 50% 46%, rgba(13, 14, 13, 0.62) 0%, rgba(13, 14, 13, 0.18) 100%);
+      radial-gradient(110% 60% at 50% 46%, rgba(13, 14, 13, 0.72) 0%, rgba(13, 14, 13, 0.24) 100%);
   }
 }
 .hero__sheen--warm {
@@ -279,10 +280,10 @@ p { text-wrap: pretty; }
 
 /* Load-in: masked line rise for the headline, simple fades for the rest */
 @media (prefers-reduced-motion: no-preference) {
-  .js .in { opacity: 0; transform: translateY(16px); animation: in 1.1s var(--ease) forwards; animation-delay: calc(var(--d, 0) * 1ms + 150ms); }
+  .js .in { opacity: 0; transform: translateY(10px); animation: in 0.45s var(--ease) forwards; animation-delay: calc(var(--d, 0) * 1ms + 20ms); }
   @keyframes in { to { opacity: 1; transform: none; } }
   .js .line { display: block; overflow: hidden; padding-bottom: 0.06em; margin-bottom: -0.06em; }
-  .js .line > span { display: block; transform: translateY(105%); animation: line 1.2s var(--ease) forwards; animation-delay: calc(var(--d, 0) * 1ms + 150ms); }
+  .js .line > span { display: block; transform: translateY(105%); animation: line 0.55s var(--ease) forwards; animation-delay: calc(var(--d, 0) * 1ms + 20ms); }
   @keyframes line { to { transform: none; } }
 }
 
@@ -441,7 +442,7 @@ p { text-wrap: pretty; }
   }
   .quotes::-webkit-scrollbar { display: none; }
   .quotes li {
-    flex: 0 0 84%; scroll-snap-align: start; gap: 1.5rem;
+    flex: 0 0 80%; scroll-snap-align: start; gap: 1.5rem;
     padding: 1.5rem 1.35rem 1.4rem; border: 1px solid var(--line-dark); background: rgba(236, 235, 229, 0.035);
   }
   .motion .quotes::after { display: none; }
@@ -578,7 +579,7 @@ p { text-wrap: pretty; }
   transform: translateY(101%); transition: transform 0.5s var(--ease);
 }
 .mbar.is-on { transform: none; }
-.mbar a { display: flex; align-items: center; justify-content: center; gap: 0.6rem; height: 3.75rem; font-weight: 600; font-size: 0.9375rem; }
+.mbar a { display: flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 56px; height: 60px; font-weight: 600; font-size: 0.9375rem; }
 .mbar a + a { border-left: 1px solid var(--line-dark); }
 .mbar a:first-child { background: var(--bone); color: var(--ink); }
 .mbar svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.6; }
@@ -761,3 +762,22 @@ p { text-wrap: pretty; }
 .gallery__quote footer { color: var(--stone-dark); }
 @media (min-width: 48rem) { .gallery__quote blockquote { aspect-ratio: auto; } }
 @media (max-width: 47.99rem) { .gallery__quote { align-self: stretch; } .gallery__quote blockquote { aspect-ratio: 3 / 4; } }
+
+/* Phones text, desktops call: SMS buttons only on small screens */
+@media (max-width: 59.99rem) { .only-desk { display: none !important; } }
+@media (min-width: 60rem) { .only-touch { display: none !important; } }
+.hero__note { margin-top: 1rem; color: var(--stone-dark); }
+
+/* Missing or slow images sit on a dark neutral, never an empty beige box; hide broken-image icons and alt text */
+.svc-card__media, .svc__photo, .gallery__media, .family__img { background-color: var(--ink-3); }
+.svc-card__media img, .svc__photo img, .gallery__media img, .family__img, .family__thumbs img { color: transparent; font-size: 0; }
+
+/* Comparison: phones show 4 rows until expanded */
+.compare__toggle { display: none; }
+@media (max-width: 39.99rem) {
+  .js .compare:not(.is-open) .compare__extra { display: none; }
+  .js .compare__toggle:not([hidden]) {
+    display: flex; align-items: center; justify-content: center; width: 100%; min-height: 3.25rem; margin-top: 0.25rem;
+    border-top: 1px solid var(--line-strong); font-weight: 600; font-size: 0.9375rem;
+  }
+}
